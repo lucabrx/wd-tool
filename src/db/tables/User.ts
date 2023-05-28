@@ -9,6 +9,7 @@ export const User = mysqlTable(
      email: varchar("email", { length: 191 }).notNull(),
      emailVerified: timestamp("emailVerified"),
      image: varchar("image", { length: 191 }).default("/avatar-placeholder.jpeg"),
+     role: varchar("role", { length: 191 }).notNull().default("user"),
      created_at: timestamp("created_at").notNull().defaultNow(),
      updated_at: timestamp("updated_at").notNull().defaultNow().onUpdateNow(),
    },
