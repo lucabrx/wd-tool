@@ -43,6 +43,9 @@ const Navbar: NextPage<NavbarProps> = ({session}) => {
     <Link className={
       pathname === '/design' ? 'text-lg text-text font-semibold ' : 'text-lg text-text/80 font-semibold tracking-wider'
     } href="/design">Design</Link>
+    <Link className={
+      pathname === '/favorites' ? 'text-lg text-text font-semibold ' : 'text-lg text-text/80 font-semibold tracking-wider'
+    } href="/favorites">Favorites</Link>
 
     <ShouldRender if={session?.role === "admin"}>
     <Button
