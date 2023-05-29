@@ -35,7 +35,7 @@ const categories = [
         src: '/designCategory/stockImg.svg',
     },
     {
-        name: "Design Tool",
+        name: "Design Tools",
         src: '/designCategory/designTools.svg',
     },
     {   
