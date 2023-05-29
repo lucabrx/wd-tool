@@ -19,6 +19,7 @@ const EmptyState: FC<EmptyStateProps> = ({title,subtitle,action,actionLabel}) =>
         {subtitle}
         </h3>
         <Button 
+        className="px-2 py-1"
         variant="cta"
         onClick={action}> 
         {actionLabel} 
