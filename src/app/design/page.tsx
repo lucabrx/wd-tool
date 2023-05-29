@@ -69,7 +69,7 @@ const categories = [
 
 ]
 export default  function DesignHome() {
-    const [category, setCategory] = useState<string>("")
+    const [category, setCategory] = useState<string>("Inspirations")
 
     const fetchTools = async ({pageParam = 0}) => {
         try{

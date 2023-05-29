@@ -84,7 +84,7 @@ const categories = [
 ]
 
 export default function CodingHome() {
-    const [category, setCategory] = useState<string>("")
+    const [category, setCategory] = useState<string>("Frameworks")
 
 
     const fetchTools = async ({pageParam = 0}) => {
