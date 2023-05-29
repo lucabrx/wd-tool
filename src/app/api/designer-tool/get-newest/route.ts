@@ -3,7 +3,7 @@ import { db } from "@/lib/db"
 import { desc } from "drizzle-orm"
 import { NextResponse } from "next/server"
 
-export  async function GET(request: NextResponse) {
+export  async function GET(request: Request) {
     
     const designerTools = await db
     .select()

@@ -1,9 +1,9 @@
 import { DesignerTool } from "@/db/tables/DesignerTool"
 import { db } from "@/lib/db"
 import { desc, eq } from "drizzle-orm"
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 
-export  async function GET(request: NextResponse) {
+export  async function GET(request: NextRequest) {
     const limit = new URL(request.url).searchParams.get("limit")
     const offset = new URL(request.url).searchParams.get("offset")
     const category = new URL(request.url).searchParams.get("category")

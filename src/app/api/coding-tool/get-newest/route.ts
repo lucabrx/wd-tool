@@ -1,9 +1,9 @@
 import { CodingTool } from "@/db/tables/CodingTool"
 import { db } from "@/lib/db"
 import { desc } from "drizzle-orm"
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 
-export async function GET(request: NextResponse) {
+export async function GET(request: NextRequest) {
 
     const designerTools = await db
     .select()
