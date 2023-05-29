@@ -9,7 +9,7 @@ export const buttonVariant = cva('flex justify-center  items-center rounded-md  
         variant: {
             "default" : '',
             "cta" : 'shadow-sm bg-gradient-to-br from-cta1 to-cta2 hover:to-cta1 font-bold text-md tracking-wider text-[18px] ',
-            "ghost-cta" : 'shadow-sm hover:bg-zinc-800/80 font-bold text-md tracking-wider text-[16px] px-2 py-1.5 w-[120px] text-zinc-100',
+            "ghost-cta" : 'shadow-sm hover:bg-zinc-800/80 font-bold text-md tracking-wider text-[18px] px-2 py-1.5 w-[130px] text-zinc-100',
             "cta-card" : "shadow-sm bg-gradient-to-br from-cta1 to-cta2 hover:to-cta1  text-md tracking-wider",
             "google" : "shadow-sm bg-[#fefffe] hover:bg-[#fefffe]/70 text-[#111926] w-[290px] font-bold text-[18px] tracking-weider",
             "discord" : "shadow-sm bg-[#6266f0] hover:bg-[#6266f0]/70 text-[#d8dee5] w-[290px] font-bold text-[18px] tracking-weider",

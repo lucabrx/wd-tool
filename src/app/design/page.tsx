@@ -11,11 +11,11 @@ import { Fragment, useState } from "react"
 
 const categories = [
     {
-        name: 'Inspiration',
+        name: 'Inspirations',
         src: '/designCategory/inspiration.svg',
     },
     {
-        name: "Illustration",
+        name: "Illustrations",
         src: '/designCategory/illustration.svg',
     },
     {
@@ -23,11 +23,11 @@ const categories = [
         src: '/designCategory/icons.svg',
     },
     {
-        name: "Color",
+        name: "Colors",
         src: '/designCategory/colors.svg',
     },
     {
-        name: "Mockup",
+        name: "Mockups",
         src: '/designCategory/mockup.svg',
     },
     {
@@ -43,10 +43,11 @@ const categories = [
         src: '/designCategory/blogs.svg',
     },
     {
+        name: "AI",
         src: '/designCategory/ai.svg',
     },
     {
-        name: "Podcast",
+        name: "Podcasts",
         src: '/designCategory/podcasts.svg',
     },
     {
@@ -58,11 +59,11 @@ const categories = [
         src: '/designCategory/typo.svg',
     },
     {
-        name: "Tutorials",
-        src: '/designCategory/learning.svg',
+        name: "Books",
+        src: '/designCategory/books.svg',
     },
     {
-        name: "Video",
+        name: "Videos",
         src: '/designCategory/videos.svg',
     }
 

@@ -105,8 +105,8 @@ className='pt-2'
     ${errors.category ? "border border-rose-500" : ""}
     `}>
         <option value="AI">AI</option>
-        <option value="Inspirations">Inspiration</option>
-        <option value="Illustrations">Illustration</option>
+        <option value="Inspirations">Inspirations</option>
+        <option value="Illustrations">Illustrations</option>
         <option value="Icons">Icons</option>
         <option value="Colors">Colors</option>
         <option value="Mockups">Mockups</option>
@@ -115,8 +115,8 @@ className='pt-2'
         <option value="Design Tools">Design Tools</option>
         <option value="Blogs">Blogs</option>
         <option value="Podcasts">Podcasts</option>
-        <option value="Backend">Backend</option>
         <option value="Typography">Typography</option>
+        <option value="Learning">Learning</option>
         <option value="Videos">Videos</option>
     </select>
 </Field>
