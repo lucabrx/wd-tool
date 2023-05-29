@@ -8,17 +8,13 @@ export async function GET(request: NextResponse) {
     const offset = new URL(request.url).searchParams.get("offset")
     const category = new URL(request.url).searchParams.get("category")
 
-    if(!category) {
-        return NextResponse.json({message: "Category is required"})
-    }
-
     const codingTools = await db
     .select()
     .from(CodingTool)
     .offset(Number(offset))
     .limit(Number(limit))
     .orderBy(desc(CodingTool.created_at))
-    .where(eq(CodingTool.category, category))
+    .where(eq(CodingTool.category, category!))
 
     return NextResponse.json(codingTools)
 }

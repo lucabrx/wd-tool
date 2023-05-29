@@ -106,7 +106,7 @@ className='pt-2'
     `}>
         <option value="AI">AI</option>
         <option value="Testing">Testing</option>
-        <option value="Framworks">Frameworks</option>
+        <option value="Frameworks">Frameworks</option>
         <option value="State">State</option>
         <option value="Context">Context</option>
         <option value="Animation">Animation</option>

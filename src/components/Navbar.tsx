@@ -8,7 +8,7 @@ import { signOut } from 'next-auth/react';
 import { Logo } from './ui/Logo';
 import { UserType } from '@/db/tables/User';
 import useLoginModal from '@/hooks/useLoginModal';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import ShouldRender from './helpers/ShouldRender';
 
 interface NavbarProps {
@@ -19,6 +19,7 @@ const Navbar: NextPage<NavbarProps> = ({session}) => {
     const [isOpen, setOpen] = useState(false)
     const loginModal = useLoginModal();
     const router = useRouter();
+    const pathname = usePathname();
 
   return (
 <div className='w-full mx-auto flex justify-center bg-cardContainer border-smText/40 border-b h-[60px]'> 
@@ -32,6 +33,17 @@ const Navbar: NextPage<NavbarProps> = ({session}) => {
     <Hamburger toggled={isOpen} toggle={setOpen} rounded />
     </Button>
 
+    <div className='hidden md:flex justify-center items-center gap-5'>
+    <Link className={
+      pathname === '/' ? 'text-lg text-text font-semibold ' : 'text-lg text-text/80 font-semibold tracking-wider'
+    } href="/">Home</Link>
+    <Link className={
+      pathname === '/coding' ? 'text-lg text-text font-semibold ' : 'text-lg text-text/80 font-semibold tracking-wider'
+    } href="/coding">Coding</Link>
+    <Link className={
+      pathname === '/design' ? 'text-lg text-text font-semibold ' : 'text-lg text-text/80 font-semibold tracking-wider'
+    } href="/design">Design</Link>
+
     <ShouldRender if={session?.role === "admin"}>
     <Button
     variant="cta"
@@ -40,6 +52,7 @@ const Navbar: NextPage<NavbarProps> = ({session}) => {
     Admin
     </Button>
     </ShouldRender>
+    </div>
 
     <div className='hidden md:block'>
     {
