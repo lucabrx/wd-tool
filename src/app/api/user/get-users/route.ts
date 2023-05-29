@@ -5,7 +5,7 @@ import { desc } from "drizzle-orm"
 import { NextResponse } from "next/server"
 
 
-export default async function GET(request: NextResponse) {
+export  async function GET(request: NextResponse) {
     const session = await getCurrentSession()
     const limit = new URL(request.url).searchParams.get("limit")
     const offset = new URL(request.url).searchParams.get("offset")

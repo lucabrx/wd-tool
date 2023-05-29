@@ -4,12 +4,12 @@ import { type FC } from 'react';
 
 
 
-const RedirectBack: FC = ({}) => {
+const RedirectHome: FC = ({}) => {
     const router = useRouter()
 
-    router.push("/")
+    router.back()
   return null
 
 }
 
-export default RedirectBack
+export default RedirectHome

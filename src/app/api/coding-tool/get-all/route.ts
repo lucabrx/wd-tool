@@ -1,10 +1,10 @@
 import { CodingTool } from "@/db/tables/CodingTool"
 import { db } from "@/lib/db"
 import { getCurrentSession } from "@/utils/getSession"
-import { desc } from "drizzle-orm"
+import { asc } from "drizzle-orm"
 import { NextResponse } from "next/server"
 
-export default async function GET(request: NextResponse) {
+export  async function GET(request: NextResponse) {
     const session = await getCurrentSession()
     const limit = new URL(request.url).searchParams.get("limit")
     const offset = new URL(request.url).searchParams.get("offset")
@@ -21,7 +21,7 @@ export default async function GET(request: NextResponse) {
     .from(CodingTool)
     .offset(Number(offset))
     .limit(Number(limit))
-    .orderBy(desc(CodingTool.created_at))
+    .orderBy(asc(CodingTool.category))
 
     return NextResponse.json(codingTools)
 }

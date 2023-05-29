@@ -1,5 +1,5 @@
 "use client"
-import {  LayoutDashboardIcon, Pen, PenTool } from 'lucide-react';
+import {  Code, Code2, LayoutDashboardIcon, Paintbrush, Pen, PenTool } from 'lucide-react';
 import { type FC } from 'react';
 import AdminLink from './ui/AdminLink';
 
@@ -20,7 +20,17 @@ const navigationLink = [
         path:"/admin/create-designer-tool",
         icon: PenTool,
         title: "Create UI Tool"
-    }
+    },
+    {
+        path:"/admin/dev-tools",
+        icon: Code2,
+        title: "Coding Tools"
+    },
+    {
+        path:"/admin/ui-tools",
+        icon: Paintbrush,
+        title: "UI Tools"
+    },
 ]
 
 const AdminSidebar: FC = () => {

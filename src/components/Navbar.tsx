@@ -8,6 +8,8 @@ import { signOut } from 'next-auth/react';
 import { Logo } from './ui/Logo';
 import { UserType } from '@/db/tables/User';
 import useLoginModal from '@/hooks/useLoginModal';
+import { useRouter } from 'next/navigation';
+import ShouldRender from './helpers/ShouldRender';
 
 interface NavbarProps {
   session?: UserType | null
@@ -16,7 +18,8 @@ interface NavbarProps {
 const Navbar: NextPage<NavbarProps> = ({session}) => {
     const [isOpen, setOpen] = useState(false)
     const loginModal = useLoginModal();
-    
+    const router = useRouter();
+
   return (
 <div className='w-full mx-auto flex justify-center bg-cardContainer border-smText/40 border-b h-[60px]'> 
 <div className='max-w-[1200px]   w-full h-full flex  items-center justify-between px-[20px]'>
@@ -28,6 +31,15 @@ const Navbar: NextPage<NavbarProps> = ({session}) => {
     <Button className='md:hidden' >
     <Hamburger toggled={isOpen} toggle={setOpen} rounded />
     </Button>
+
+    <ShouldRender if={session?.role === "admin"}>
+    <Button
+    variant="cta"
+    onClick={() => router.push('/admin')}
+    >
+    Admin
+    </Button>
+    </ShouldRender>
 
     <div className='hidden md:block'>
     {

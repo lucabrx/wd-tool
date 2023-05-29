@@ -15,6 +15,7 @@ export const buttonVariant = cva('flex justify-center  items-center rounded-md  
             "github" : "shadow-sm bg-[#27272a] hover:bg-[#27272a]/70 text-[##fefffe] w-[290px] font-bold text-[18px] tracking-weider",
             "icon-container" : "bg-transparent, hover:bg-gray-600/30",
             "ghost" : "bg-transparent hover:bg-gray-600/30 text-gray-700 hover:text-gray-800 font-bold text-[18px] px-4 py-1.5 w-[85px]",
+            "danger" : "shadow-sm bg-rose-500 hover:bg-rose-600 text-white font-bold text-lg tracking-weider px-4 py-1.5 ",
         },
         size: {
             "default" : 'px-2 p-1',
