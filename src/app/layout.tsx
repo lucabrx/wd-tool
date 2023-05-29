@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Hydrate from '@/components/helpers/Hydrate'
 import Footer from '@/components/Footer'
 import LoginModal from '@/components/LoginModal'
+import Providers from '@/components/Providers'
 
 
 export const metadata = {
@@ -21,7 +22,7 @@ export default async function RootLayout({
     <html lang="en">
      <body >
         <div className='flex flex-col justify-between min-h-screen'>
-          
+        <Providers>
         <Hydrate>
         <LoginModal />
         </Hydrate>
@@ -33,6 +34,7 @@ export default async function RootLayout({
         </div>
         </div>
         <Footer />
+        </Providers>
         </div>    
       </body>  
     </html>

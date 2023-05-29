@@ -5,6 +5,7 @@ const nextConfig = {
             'lh3.googleusercontent.com', 
             'cdn.discordapp.com',
             'avatars.githubusercontent.com',
+            'res.cloudinary.com'
         ],
     }
 }
