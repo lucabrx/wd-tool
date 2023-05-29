@@ -2,9 +2,9 @@ import { CodingTool } from "@/db/tables/CodingTool"
 import { db } from "@/lib/db"
 import { getCurrentSession } from "@/utils/getSession"
 import { asc } from "drizzle-orm"
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 
-export  async function GET(request: NextResponse) {
+export async function GET(request: NextRequest) {
     const session = await getCurrentSession()
     const limit = new URL(request.url).searchParams.get("limit")
     const offset = new URL(request.url).searchParams.get("offset")
