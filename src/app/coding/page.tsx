@@ -52,7 +52,7 @@ const categories = [
     },
     {
         path: '/',
-        name: "Unstyled  Libraries",
+        name: "Unstyled Libs.",
         src: '/codingCategory/unstayledLib.svg',
     },
     {

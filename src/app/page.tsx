@@ -51,7 +51,7 @@ export default async function Home() {
 </div>
 </div>
 
-<div className='w-full pt-[250px] md:pt-[24px] lg:pt-[44px] flex flex-col justify-center items-center'>
+<div className='w-full pt-4 md:pt-[24px] lg:pt-[44px] flex flex-col justify-center items-center'>
     <h2 className='text-text text-2xl md:text-3xl text-center md:text-left font-medium w-full lg:ml-32 xl:ml-56'>Latest Coding Tools</h2>
     <div className="flex flex-wrap  gap-4 justify-center items-center w-full pt-4">
     {latestDesign?.map((tool) => (
