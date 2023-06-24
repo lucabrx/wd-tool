@@ -21,11 +21,11 @@ export default async function Home() {
         make your development and design life easier.
     </p>
 
-    <div className='flex gap-1 justify-start items-center w-full'>
-     <Button variant="ghost-cta">
+    <div className='flex gap-3 justify-start items-center w-full md:pt-2'>
+     <Button variant="cta" size="cta">
       <Link href='/design'>Coding Tools</Link>
      </Button>
-     <Button variant="ghost-cta">
+     <Button variant="ghost-cta" size="cta">
       <Link href='/design'>Design Tools</Link>
      </Button>
     </div>
