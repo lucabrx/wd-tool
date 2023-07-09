@@ -9,21 +9,28 @@ import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import {  Heart } from 'lucide-react';
 import ShouldRender from './helpers/ShouldRender';
+import { type UserType } from '@/db/tables/User';
+import useLoginModal from '@/hooks/useLoginModal';
+import { useClickOutside } from '@/hooks/useClickOutside';
 
 interface ItemCardProps {
-  tool : DesignerToolType | CodingToolType
+  tool : DesignerToolType | CodingToolType;
+  session? : UserType | null;
 }
 
 interface FavoriteId {
   toolId: string
 }
 
-const ItemCard: FC<ItemCardProps> = ({tool}) => {
+const ItemCard: FC<ItemCardProps> = ({tool,session}) => {
   const [loading,setLoading] = useState(false)
   const queryKey = ["favorite", tool.id]
   const queryKey2 = ["coding-favorites"]
   const queryKey3 = ["design-favorites"]
   const queryClient = useQueryClient()
+  const loginModal = useLoginModal()
+
+
   const desc = tool.description.slice(0, 190)
   const {data} = useQuery({
     queryKey: queryKey,
@@ -67,6 +74,10 @@ const ItemCard: FC<ItemCardProps> = ({tool}) => {
   })
 
   function addToFav (toolId: string) {
+    if(!session) {
+      loginModal.open()
+      return
+    }
     addToFavorite({
       toolId: tool.id
     })
@@ -83,7 +94,7 @@ const ItemCard: FC<ItemCardProps> = ({tool}) => {
 <span className='badge absolute top-2 left-2 py-1 px-2 bg-gray-300/20 text-sm rounded-md font-medium '>{tool.category}</span>
 
 
-<ShouldRender if={data?.data.length! === 0}>
+<ShouldRender if={data?.data.length! === 0 || !session}>
 <Button
 className='absolute top-2 right-2'
 variant="icon-container"

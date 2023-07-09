@@ -22,7 +22,7 @@ export const buttonVariant = cva('flex justify-center  items-center rounded-md  
             "default" : 'px-2 p-1',
             "cta-icon" : "px-4 p-2 gap-2",
             "cta-card" : "w-[65px] p-1",
-            "cta" : "px-2 min-w-[90px] py-1.5",
+            "cta" : "px-2 min-w-[90px] py-1.5 h-[44px]",
             "icon-container" : "p-1 rounded"
         }
     },

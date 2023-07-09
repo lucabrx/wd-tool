@@ -2,17 +2,19 @@ import ItemCard from '@/components/ItemCard'
 import Button from '@/components/ui/Button'
 import { getLatestCoding } from '@/utils/getLatestCoding'
 import { getLatestDesign } from '@/utils/getLatestDesign'
+import { getCurrentSession } from '@/utils/getSession'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function Home() {
   const latestCoding = await getLatestCoding()
   const latestDesign = await getLatestDesign()
+  const session = await getCurrentSession()
 
   return (
     <div className='min-h-[calc(100vh-84px)] w-full bg-cover md:bg-contain bg-center bg-no-repeat ' style={{backgroundImage: 'url(./background.svg)'}}>
 
-    <div className='flex flex-col justify-center items-center pt-8 gap-4 md:flex-row lg:pt-[120px] md:pt-[48px]'>
+    <div className='flex flex-col justify-center items-center pt-8 gap-4 md:flex-row  md:pt-[48px] lg:pt-[160px]'>
 
      <div className='flex flex-col justify-center items-start gap-2 md:w-[50%]'>
      <h2 className='text-4xl font-bold text-text md:text-6xl'>Simplify Your Design Process</h2>
@@ -41,11 +43,11 @@ export default async function Home() {
     </div>
     </div>
 
-    <div className='w-full pt-[250px] md:pt-[24px] lg:pt-[44px] flex flex-col justify-center items-center'>
+    <div className='w-full pt-[250px] md:pt-[24px] lg:pt-[92px] flex flex-col justify-center items-center'>
     <h2 className='text-text text-2xl md:text-3xl text-center md:text-left font-medium w-full lg:ml-32 xl:ml-56'>Latest Coding Tools</h2>
     <div className="flex flex-wrap  gap-4 justify-center items-center w-full pt-4">
     {latestCoding?.map((tool) => (
-    <ItemCard tool={tool} key={tool.id} />
+    <ItemCard tool={tool} key={tool.id} session={session} />
     ))}
 
 </div>
@@ -55,9 +57,8 @@ export default async function Home() {
     <h2 className='text-text text-2xl md:text-3xl text-center md:text-left font-medium w-full lg:ml-32 xl:ml-56'>Latest Coding Tools</h2>
     <div className="flex flex-wrap  gap-4 justify-center items-center w-full pt-4">
     {latestDesign?.map((tool) => (
-    <ItemCard tool={tool} key={tool.id} />
+    <ItemCard tool={tool} key={tool.id} session={session} />
     ))}
-
 </div>
 </div>
 
